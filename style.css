@@ -39,6 +39,69 @@ body {
 a { color: var(--cyan); text-decoration: none; transition: color .2s, text-shadow .2s; }
 a:hover { color: var(--pink); text-shadow: 0 0 8px rgba(255, 63, 180, 0.7); }
 
+:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
+
+/* ---------- Sticky section nav ---------- */
+
+html { scroll-behavior: smooth; }
+
+.sitenav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.sitenav-links {
+  display: flex;
+  gap: 6px;
+  padding: 8px 16px;
+  overflow-x: auto;
+}
+
+.sitenav-links a {
+  flex: none;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.sitenav-links a:hover { background: rgba(255, 63, 180, 0.12); }
+
+/* ---------- Back to top ---------- */
+
+/* ponytail: always visible — revealing it on scroll would need JS (LUẬT 1.1) */
+.totop {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9; /* above content, below .sitenav */
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--cyan);
+  border-radius: 50%;
+  background: var(--panel);
+  font-size: 1.25rem;
+  line-height: 1;
+  box-shadow: 0 0 12px rgba(45, 226, 255, 0.3), inset 0 0 10px rgba(45, 226, 255, 0.12);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.totop:hover {
+  border-color: var(--pink);
+  box-shadow: 0 0 18px rgba(255, 63, 180, 0.55), inset 0 0 12px rgba(255, 63, 180, 0.2);
+}
+
 /* ---------- Hero ---------- */
 
 .hero {
@@ -174,7 +237,8 @@ h1 {
 
 /* ---------- Sections ---------- */
 
-section { padding: 48px 0 8px; }
+/* scroll-margin clears the sticky nav (~54px) so the h2 is never covered */
+section { padding: 48px 0 8px; scroll-margin-top: 24px; }
 
 h2 {
   display: flex;
@@ -281,9 +345,13 @@ footer .links { justify-content: center; margin-top: 16px; }
   .grid { height: 140px; background-size: 44px 32px; }
   .entry { padding: 18px 16px; }
   h3 { font-size: 1.05rem; }
+  .sitenav-links { gap: 2px; padding: 6px 10px; }
+  .sitenav-links a { padding: 11px 9px; font-size: 0.72rem; letter-spacing: 0; }
+  .totop { right: 10px; bottom: 10px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .grid, .cursor { animation: none; }
   .entry, a { transition: none; }
 }
