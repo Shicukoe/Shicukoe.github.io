@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nguyen Thanh Tu — AI Engineer</title>
+  <meta name="description" content="Nguyen Thanh Tu, AI Engineer in Ho Chi Minh City. Multi-agent systems, RAG, LLM evaluation.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">AI Engineer · Ho Chi Minh City, Vietnam</p>
+      <h1>Nguyen Thanh Tu</h1>
+      <p class="lead">
+        Computer Science graduate building AI tools for real company workflows: multi-agent systems
+        for software development, natural-language data analysis, and evaluation of LLM-based methods.
+      </p>
+      <nav class="links" aria-label="Contact">
+        <a href="mailto:keotran15@gmail.com">keotran15@gmail.com</a>
+        <a href="https://github.com/Shicukoe">GitHub</a>
+        <a href="https://www.linkedin.com/in/thanhtu2008">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Bitech Technology Company Limited</h3>
+          <span class="date">Mar – Jun 2026</span>
+        </div>
+        <p class="role">Data &amp; AI Engineering Intern</p>
+
+        <div class="sub">
+          <h4>AI Agent Developer — Request-to-Code Pipeline</h4>
+          <ul>
+            <li>Built a multi-agent system that turns Trello cards (bug reports, feature requests) into code changes on separate Git branches.</li>
+            <li>Separate agents triage, analyse requirements, plan, and split large tasks into ordered sub-tasks.</li>
+            <li>Claude Code writes the change; a review agent checks it against the acceptance criteria and sends failures back for automatic retries.</li>
+            <li>Runs one worker process per project, tracks token cost per stage, and has a full-auto mode from card to review.</li>
+          </ul>
+          <p class="tags">TypeScript · Node.js · Claude Code · SQLite · Git worktrees · Express</p>
+        </div>
+
+        <div class="sub">
+          <h4>AI Analyst Agent — Natural-Language Interface for Company Data</h4>
+          <ul>
+            <li>Built an agent that answers business questions in plain language over a Microsoft Fabric data warehouse.</li>
+            <li>SQL safety checks block anything but read-only queries; numbers are computed in Python, never by the LLM.</li>
+            <li>Guardrails reject answers whose numbers cannot be traced back to the query results.</li>
+          </ul>
+          <p class="tags">Python · LangGraph · FastAPI · sqlglot · pandas · MCP</p>
+        </div>
+
+        <div class="sub">
+          <h4>ERP Migration Automation — Wujia Tea (Hong Tra Ngo Gia)</h4>
+          <ul>
+            <li>Automated an Odoo migration from version 14 to 19 for a live retail client, with backup, rollback, and Telegram status updates.</li>
+            <li>Deployed the migration system on VPS servers with Docker and Nginx across two regions.</li>
+          </ul>
+          <p class="tags">Odoo · Docker · Nginx · Linux</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3><a href="https://github.com/Shicukoe/LMMsforClinicalDiagnosis">Multimodal Clinical Diagnosis Support System</a></h3>
+          <span class="date">Oct 2025 – Feb 2026</span>
+        </div>
+        <p class="role">Team Lead, team of 6</p>
+        <ul>
+          <li>Led a team of six to build an AI-assisted diagnosis system for tropical diseases.</li>
+          <li>Combined a RAG pipeline (BioClinicalBERT, CLIP, FAISS, cross-encoder reranking) with fine-tuned MedGemma-4B and LLaVA-NeXT.</li>
+          <li>Improved diagnostic accuracy by about 12% over baseline prompting, measured with Precision@5, Recall, MAP, and LLM-as-judge.</li>
+        </ul>
+        <p class="tags">PyTorch · Hugging Face · QLoRA · FAISS · RAG</p>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3><a href="https://github.com/Shicukoe/Thesis">AI-Assisted Master Prompt Generation</a></h3>
+          <span class="date">Aug 2026</span>
+        </div>
+        <p class="role">Bachelor Thesis · Solo research</p>
+        <ul>
+          <li>Studied how AI coding agents lose track of requirements when users keep changing them across long conversations.</li>
+          <li>Built a method that keeps an up-to-date project spec, traces each requirement back to its original prompt, and flags conflicting requests.</li>
+          <li>Tested with Claude, Codex, and Gemini. In the strongest result, the untraceable requirement rate dropped from 92% to 0%.</li>
+        </ul>
+        <p class="tags">Prompt engineering · AlignScore · LLM evaluation</p>
+      </article>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>AI Engineering</dt>
+        <dd>RAG, multi-agent systems, multimodal LLMs, QLoRA fine-tuning, prompt engineering, LLM routing, Hugging Face Transformers, PyTorch</dd>
+        <dt>Retrieval &amp; Evaluation</dt>
+        <dd>FAISS, cross-encoder reranking, Precision@5, Recall, MAP, LLM-as-judge, entailment scoring</dd>
+        <dt>Programming &amp; Tools</dt>
+        <dd>Python, TypeScript/Node.js, SQL, FastAPI, pandas, scipy, Git, Docker, Nginx, Linux</dd>
+      </dl>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <article class="entry">
+        <div class="entry-head">
+          <h3>B.Sc. Computer Science — Vietnamese-German University</h3>
+          <span class="date">2022 – 2026</span>
+        </div>
+        <p class="role">Degree requirements completed · Diploma pending</p>
+      </article>
+      <article class="entry">
+        <div class="entry-head">
+          <h3>Double Degree Program — Frankfurt University of Applied Sciences</h3>
+          <span class="date">Apr – Jul 2025</span>
+        </div>
+        <p class="role">Exchange semester, Germany</p>
+      </article>
+      <p class="langs">IELTS 7.0 · Vietnamese (native) · English (professional working proficiency) · German (elementary)</p>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <p>© 2026 Nguyen Thanh Tu</p>
+  </footer>
+</body>
+</html>

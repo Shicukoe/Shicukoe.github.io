@@ -1,0 +1,134 @@
+:root {
+  --bg: #fbfbf9;
+  --surface: #ffffff;
+  --text: #1c1d1f;
+  --muted: #5d6168;
+  --line: #e4e4e0;
+  --accent: #2456c7;
+  --tag-bg: #eef2fb;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121315;
+    --surface: #1a1b1e;
+    --text: #e8e8e6;
+    --muted: #a0a4ab;
+    --line: #2c2e33;
+    --accent: #7ea3ff;
+    --tag-bg: #1e2433;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.hero {
+  border-bottom: 1px solid var(--line);
+  padding: 72px 0 40px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  margin: 4px 0 16px;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  line-height: 1.15;
+}
+
+.lead {
+  margin: 0 0 24px;
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-weight: 500;
+}
+
+section { padding: 40px 0 8px; }
+
+h2 {
+  margin: 0 0 20px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.entry {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 16px;
+}
+
+h3 { margin: 0; font-size: 1.1rem; }
+h4 { margin: 0 0 6px; font-size: 1rem; }
+
+.date { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
+.role { margin: 2px 0 12px; color: var(--muted); font-style: italic; }
+
+.sub { padding-top: 14px; margin-top: 14px; border-top: 1px dashed var(--line); }
+.role + .sub { border-top: 0; margin-top: 0; padding-top: 0; }
+
+ul { margin: 0; padding-left: 20px; }
+li + li { margin-top: 4px; }
+
+.tags {
+  display: inline-block;
+  margin: 12px 0 0;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--tag-bg);
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+.skills { margin: 0; }
+.skills dt { font-weight: 600; }
+.skills dd { margin: 2px 0 14px; color: var(--muted); }
+
+.langs { color: var(--muted); }
+
+footer {
+  padding-top: 32px;
+  padding-bottom: 40px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
