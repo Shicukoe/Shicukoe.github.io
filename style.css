@@ -39,6 +39,42 @@ body {
 a { color: var(--cyan); text-decoration: none; transition: color .2s, text-shadow .2s; }
 a:hover { color: var(--pink); text-shadow: 0 0 8px rgba(255, 63, 180, 0.7); }
 
+:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
+
+/* ---------- Sticky section nav ---------- */
+
+html { scroll-behavior: smooth; }
+
+.sitenav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.sitenav-links {
+  display: flex;
+  gap: 6px;
+  padding: 8px 16px;
+  overflow-x: auto;
+}
+
+.sitenav-links a {
+  flex: none;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.sitenav-links a:hover { background: rgba(255, 63, 180, 0.12); }
+
 /* ---------- Hero ---------- */
 
 .hero {
@@ -174,7 +210,8 @@ h1 {
 
 /* ---------- Sections ---------- */
 
-section { padding: 48px 0 8px; }
+/* scroll-margin clears the sticky nav (~54px) so the h2 is never covered */
+section { padding: 48px 0 8px; scroll-margin-top: 24px; }
 
 h2 {
   display: flex;
@@ -278,9 +315,12 @@ footer {
   .grid { height: 140px; background-size: 44px 32px; }
   .entry { padding: 18px 16px; }
   h3 { font-size: 1.05rem; }
+  .sitenav-links { gap: 2px; padding: 6px 10px; }
+  .sitenav-links a { padding: 11px 9px; font-size: 0.72rem; letter-spacing: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .grid, .cursor { animation: none; }
   .entry, a { transition: none; }
 }
