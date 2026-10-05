@@ -45,6 +45,25 @@ a:hover { text-decoration: underline; }
   padding: 72px 0 40px;
 }
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 32px;
+  align-items: center;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 600px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .photo { width: 160px; order: -1; }
+}
+
 .eyebrow {
   margin: 0;
   color: var(--muted);
