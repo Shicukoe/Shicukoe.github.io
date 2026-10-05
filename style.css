@@ -269,6 +269,9 @@ footer {
   color: var(--muted);
 }
 
+/* Reuses the hero pill styling from .links, just centred under the copyright. */
+footer .links { justify-content: center; margin-top: 16px; }
+
 /* ---------- Phone ---------- */
 
 @media (max-width: 640px) {
