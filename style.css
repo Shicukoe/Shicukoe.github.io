@@ -75,6 +75,33 @@ html { scroll-behavior: smooth; }
 
 .sitenav-links a:hover { background: rgba(255, 63, 180, 0.12); }
 
+/* ---------- Back to top ---------- */
+
+/* ponytail: always visible — revealing it on scroll would need JS (LUẬT 1.1) */
+.totop {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9; /* above content, below .sitenav */
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--cyan);
+  border-radius: 50%;
+  background: var(--panel);
+  font-size: 1.25rem;
+  line-height: 1;
+  box-shadow: 0 0 12px rgba(45, 226, 255, 0.3), inset 0 0 10px rgba(45, 226, 255, 0.12);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.totop:hover {
+  border-color: var(--pink);
+  box-shadow: 0 0 18px rgba(255, 63, 180, 0.55), inset 0 0 12px rgba(255, 63, 180, 0.2);
+}
+
 /* ---------- Hero ---------- */
 
 .hero {
@@ -317,6 +344,7 @@ footer {
   h3 { font-size: 1.05rem; }
   .sitenav-links { gap: 2px; padding: 6px 10px; }
   .sitenav-links a { padding: 11px 9px; font-size: 0.72rem; letter-spacing: 0; }
+  .totop { right: 10px; bottom: 10px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
